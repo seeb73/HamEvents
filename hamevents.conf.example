@@ -1,0 +1,27 @@
+[database]
+dbhost = localhost
+dbport = 3306
+dbname = hamevents
+dbuser = hamevents
+dbpassword = twojehaslo
+
+[server]
+udpPort = 2237
+thread_max = 24
+
+[log]
+log_path = /var/log/hamevent.log
+wrong_log_path = /var/log/hamevent.err
+wrong_log_enabled = true
+isDebug = false
+
+[operator]
+inactive_check_interval = 5   # co ile minut sprawdzać
+inactive_threshold = 15       # po ilu minutach uznać za nieaktywne
+
+[dxcluster]
+dxserver = dxcluster.pl
+dxport = 7300
+dxuser = 
+dxinterval = 15
+dxisEnable = false
