@@ -1,9 +1,10 @@
 # 📡 hamevent - aktualizacja
 
 Aktualizacja projektu `hamevent`:
-- Log główny (`/var/log/hamevent.log`)
-- Log błędnych danych (`/var/log/hamevent.err`)
-- Konfiguracja przez plik `config.ini`
+- Log główny (`/var/log/hamevents/hamevents.log`)
+- Log błędnych danych (`/var/log/hamevents/hamevents.err`)
+- Log spływających danych (`/var/log/hamevents/hamevents.raw`)
+- Konfiguracja przez plik `/etc/hamevents/hamevents/hamevents.conf`
 
 ## Nowe parametry w config.ini
 - `logfile`: Ścieżka do pliku głównego logu
@@ -11,15 +12,14 @@ Aktualizacja projektu `hamevent`:
 - `wronglogfile`: Ścieżka do pliku błędnych danych
 
 ## Instrukcja użycia
-1. Podmień pliki `config_manager.h`, `config_manager.cpp`, `logger.h`, `logger.cpp`.
-2. Dodaj `config.ini` do katalogu projektu.
-3. Dodaj obsługę błędnych danych w `qso_processor.cpp`:
-   - Jeśli parsowanie danych zwraca pusty wynik, zapisz do `wronglogfile`.
+1. Utwórz kopię pliku hamevents.conf.example do /etc/hamevents/hamevents/hamevents.conf.
+2. Wpisz właściwe dane do 'hamevensts.conf` do katalogu projektu.
 
 ## Budowanie
 ```bash
 make clean
 make
+./hamevents 
 ```
 
 ---
